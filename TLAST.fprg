@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="TLAST"/>
+        <attribute name="authors" value="ignac"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-11-18 09:12:00 PM"/>
+        <attribute name="created" value="aWduYWM7SUdOQUNJQTsyMDI1LTExLTE4OzA4OjE2OjM2IFBNOzIyOTQ="/>
+        <attribute name="edited" value="aWduYWM7SUdOQUNJQTsyMDI1LTExLTE4OzA5OjEyOjAwIFBNOzE7MjM5MA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="at" type="String" array="True" size="10"/>
+            <declare name="n" type="Integer" array="False" size=""/>
+            <assign variable="n" expression="0"/>
+            <output expression="daftartugas(n)" newline="True"/>
+        </body>
+    </function>
+    <function name="showassignment" type="Integer" variable="n">
+        <parameters>
+            <parameter name="n" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="namatgs" type="String" array="True" size="10"/>
+            <declare name="nim" type="String" array="True" size="10"/>
+            <declare name="matkul" type="String" array="True" size="10"/>
+            <declare name="dospem" type="String" array="True" size="10"/>
+            <declare name="tglbulantahun" type="String" array="True" size="10"/>
+            <declare name="waktu" type="String" array="True" size="10"/>
+            <declare name="nama" type="String" array="True" size="10"/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <assign variable="i" expression="0"/>
+            <input variable="n"/>
+            <for variable="i" start="0" end="n-1" direction="inc" step="1">
+                <input variable="nama[i]"/>
+                <input variable="namatgs[i]"/>
+                <input variable="nim[i]"/>
+                <input variable="matkul[i]"/>
+                <input variable="dospem[i]"/>
+                <input variable="tglbulantahun[i]"/>
+                <input variable="waktu[i]"/>
+            </for>
+            <for variable="i" start="0" end="n-1" direction="inc" step="1">
+                <output expression="&quot;&quot;&amp;nim[i]&amp;&quot;_&quot;&amp;nama[i]&amp;&quot;_&quot;&amp;namatgs[i]" newline="True"/>
+            </for>
+        </body>
+    </function>
+    <function name="p" type="Integer" variable="p">
+        <parameters>
+            <parameter name="p" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <input variable="tk"/>
+            <input variable="hhd"/>
+            <assign variable="p" expression="tk*(1.0/hhd)"/>
+            <if expression="p&gt;3">
+                <then>
+                    <output expression="&quot;Penting! Anda harus mengerjakan tugas ini segera&quot;" newline="True"/>
+                </then>
+                <else>
+                    <if expression="p&gt;1.5&amp;&amp;p&lt;3">
+                        <then>
+                            <output expression="&quot;Tugas ini memiliki prioritas menengah&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <if expression="p&lt;1.5">
+                                <then>
+                                    <output expression="&quot;Tugas ini relatif ringan, namun jangan tunda terlalu lama&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <output expression="&quot;Tugas ini relatif ringan, namun jangan tunda terlalu lama&quot;" newline="True"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="updatetaskstatus" type="Integer" variable="n">
+        <parameters>
+            <parameter name="n" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <input variable="kodematkul"/>
+        </body>
+    </function>
+</flowgorithm>
